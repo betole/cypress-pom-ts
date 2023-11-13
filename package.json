@@ -1,0 +1,29 @@
+{
+  "name": "cypress-pom-ts",
+  "version": "1.0.0",
+  "description": "Cypress e2e template repo using typescript and Page Object Model pattern",
+  "main": "index.js",
+  "scripts": {
+    "test": "cypress run",
+    "open": "cypress open"
+  },
+  "keywords": [
+    "cypress",
+    "e2e",
+    "pom",
+    "ts"
+  ],
+  "engines": {
+    "node": "20.9",
+    "npm": "10"
+  },
+  "author": "betole",
+  "license": "MIT",
+  "dependencies": {
+    "cypress": "13.5.0",
+    "@cypress/xpath": "^2.0.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2"
+  }
+}
