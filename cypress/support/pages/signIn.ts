@@ -11,7 +11,7 @@ class SignInPage extends BasePage {
   
   //Locators
   private invalidFields = (locator: string) => 
-    cy.get(locator + commonLc.properties['aria-invalid'])
+    cy.get(locator + commonLc.properties['aria-invalid']);
 
   public fields = {
     userName: () => cy.get(lc.fields.userName),
@@ -32,7 +32,12 @@ class SignInPage extends BasePage {
     goToSignUp: () => cy.get(lc.links.signUp)
   }
 
-  //Actions
+  // //Actions
+  // public override open(): SignInPage {
+  //   super.open();
+  //   return this;
+  // }
+
   public signin(opts: {
     userName: string, 
     password: string, 

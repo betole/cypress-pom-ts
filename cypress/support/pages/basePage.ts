@@ -5,7 +5,7 @@ export default abstract class BasePage {
 
   protected url: string;
 
-  public open(): BasePage {
+  public open(): this {
     cy.visit(this.url);
     return this;
   }

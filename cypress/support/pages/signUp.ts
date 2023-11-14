@@ -11,7 +11,7 @@ class SignupPage extends BasePage {
 
   //Locators
   private invalidFields = (locator: string) => 
-    cy.get(locator + commonLc.properties['aria-invalid'])
+    cy.get(locator + commonLc.properties['aria-invalid']);
 
   public fields = {
     firstName: () => cy.get(lc.fields.firstName),
