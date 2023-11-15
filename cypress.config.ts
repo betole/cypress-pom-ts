@@ -1,8 +1,6 @@
 /// <reference types="cypress"/>
 
 import { defineConfig } from "cypress";
-import { resolve } from 'node:path';
-import { readFileSync } from 'node:fs';
 
 export default defineConfig({
   retries: {
@@ -18,13 +16,7 @@ export default defineConfig({
   e2e: {
     specPattern: 'cypress/tests/e2e/**/*.ts',
     setupNodeEvents(on, config) {
-      const env = config.env.ENV?? 'local';
-      const envFilePath = resolve(`cypress/fixtures/envs/${env}`, 'config.json');
-      const fixtureConfig = JSON.parse(readFileSync(envFilePath, 'utf-8'));
-      return {
-        ...config,
-        ...fixtureConfig
-      }
+      return require('./cypress/support/plugins.ts')(on, config);
     },
-  },
+  }
 });

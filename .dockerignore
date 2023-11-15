@@ -11,4 +11,14 @@ reports/*.*
 
 #CI
 Jenkinsfile
+
+#K8S
+.manifests
+
+#Docs
+*.md
+LICENCE
+
+#Git
+.git
 .github
