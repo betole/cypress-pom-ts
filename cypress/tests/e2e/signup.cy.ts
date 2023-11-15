@@ -39,7 +39,14 @@ describe('Sign Up Flows', function () {
       .signin(newUser, true);
     hp.om
       .completeOnboarding(this.bankAccounts.newUserUI);
-    hp.
-      
-  });
+    
+    //Validations
+    hp.sn.labels.fullName().should('contain.text', `${newUser.firstName} ${newUser.lastName.charAt(0)}`);
+    hp.sn.labels.userName().should('have.text', `@${newUser.userName}`);
+    hp.sn.labels.balance().should('have.text', `$0.00`);
+    hp.rows.container(0).should('be.visible');
+    hp.hd.tabs.everyone().should('attr', 'aria-selected', 'true');
+    hp.hd.buttons.newTransaction().should('attr', 'aria-disabled', 'false');
+    hp.hd.buttons.sidenavToggle().should('be.visible');
+  })
 });
