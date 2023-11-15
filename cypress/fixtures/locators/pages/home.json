@@ -1,0 +1,19 @@
+{
+  "container": "[data-test='main']",
+  "filters": {
+    "date": "[data-test='transaction-list-filter-date-range-button']",
+    "amount": "[data-test='transaction-list-filter-amount-range-button']"
+  },
+  "rows": {
+    "container": "li[data-test*='transaction-item']",
+    "noTransactions": "[data-test='empty-list-children']",
+    "createTransaction": "[data-test='transaction-list-empty-create-transaction-button']",
+    "amount": "[data-test*='transaction-amount']",
+    "sender": "[data-test*='transaction-sender']",
+    "action": "[data-test*='transaction-action']",
+    "receiver": "[data-test*='transaction-receiver']",
+    "paymentId": "p[class*='MuiTypography-body2']",
+    "likeCount": "[data-test='transaction-like-count']",
+    "commentCount": "[data-test='transaction-comment-count']"
+  }
+}
