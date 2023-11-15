@@ -1,0 +1,8 @@
+{
+  "container": "[data-test='bankaccount-form']",
+  "inputs": {
+    "name": "#bankaccount-bankName-input",
+    "routingNumber": "#bankaccount-routingNumber-input",
+    "accountNumber": "#bankaccount-accountNumber-input"
+  }
+}

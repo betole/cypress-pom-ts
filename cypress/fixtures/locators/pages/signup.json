@@ -1,0 +1,12 @@
+{
+  "inputs": {
+    "firstName": "#firstName",
+    "lastName": "#lastName",
+    "userName": "#username",
+    "password": "#password",
+    "confirmPassword": "#confirmPassword"
+  },
+  "buttons": {
+    "signUp": "[data-test='signup-submit']"
+  }
+}

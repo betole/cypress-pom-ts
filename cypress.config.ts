@@ -16,6 +16,7 @@ export default defineConfig({
   includeShadowDom: true,
   screenshotsFolder: './reports/screenshots',
   e2e: {
+    specPattern: 'cypress/tests/e2e/**/*.ts',
     setupNodeEvents(on, config) {
       const env = config.env.ENV?? 'local';
       const envFilePath = resolve(`cypress/fixtures/envs/${env}`, 'config.json');

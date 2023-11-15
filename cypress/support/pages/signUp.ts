@@ -1,8 +1,10 @@
-import lc from "../../fixtures/locators/signUp.json";
-import commonLc from "../../fixtures/locators/common.json";
+import loc from "../../fixtures/locators/pages/signUp.json";
+import commonLoc from "../../fixtures/locators/common.json";
 import url from "../../fixtures/url.json"
 
-import BasePage from "./basePage";
+import BasePage from "./base/basePage";
+import Secrets from "../utils/secrets";
+import UserWS from "../wrappers/userWS";
 
 class SignupPage extends BasePage {
   constructor() {
@@ -11,39 +13,35 @@ class SignupPage extends BasePage {
 
   //Locators
   private invalidFields = (locator: string) => 
-    cy.get(locator + commonLc.properties['aria-invalid']);
+    cy.get(locator + commonLoc.properties['aria-invalid']);
 
-  public fields = {
-    firstName: () => cy.get(lc.fields.firstName),
-    lastName: () => cy.get(lc.fields.lastName),
-    userName: () => cy.get(lc.fields.userName),
-    password: () => cy.get(lc.fields.password),
-    confirmPassword: () => cy.get(lc.fields.confirmPassword),
-    invalidFirstName: () => this.invalidFields(lc.fields.firstName),
-    invalidLastName: () => this.invalidFields(lc.fields.lastName),
-    invalidUserName: () => this.invalidFields(lc.fields.userName),
-    invalidPassword: () => this.invalidFields(lc.fields.password),
-    invalidConfirmPassword: () => this.invalidFields(lc.fields.confirmPassword),
+  public inputs = {
+    firstName: () => cy.get(loc.inputs.firstName),
+    lastName: () => cy.get(loc.inputs.lastName),
+    userName: () => cy.get(loc.inputs.userName),
+    password: () => cy.get(loc.inputs.password),
+    confirmPassword: () => cy.get(loc.inputs.confirmPassword),
+    invalidFirstName: () => this.invalidFields(loc.inputs.firstName),
+    invalidLastName: () => this.invalidFields(loc.inputs.lastName),
+    invalidUserName: () => this.invalidFields(loc.inputs.userName),
+    invalidPassword: () => this.invalidFields(loc.inputs.password),
+    invalidConfirmPassword: () => this.invalidFields(loc.inputs.confirmPassword),
   }
 
   public buttons = {
-    signUp:() => cy.get(lc.buttons.signUp)
+    signUp:() => cy.get(loc.buttons.signUp)
   }
 
   //Actions
-  signUp(opts: {
-    firstName: string, 
-    lastName: string, 
-    userName: string, 
-    password: string, 
-    click?: boolean
-  }) {
-    this.fields.firstName().type(opts.firstName);
-    this.fields.lastName().type(opts.lastName);
-    this.fields.userName().type(opts.userName);
-    this.fields.password().type(opts.password);
-    this.fields.confirmPassword().type(opts.password);
-    if (opts.click) this.buttons.signUp().click();
+  signUp(user: UserWS, click?: boolean
+  ) {
+    const pwd = user.password? user.password : Secrets.getPassword(user.userName);
+    this.inputs.firstName().type(user.firstName);
+    this.inputs.lastName().type(user.lastName);
+    this.inputs.userName().type(user.userName);
+    this.inputs.password().type(pwd, {hide: true});
+    this.inputs.confirmPassword().type(pwd, {hide: true});
+    if (click) this.buttons.signUp().click();
     return this;
   }
 }

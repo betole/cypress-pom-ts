@@ -1,0 +1,13 @@
+{
+  "container": "header[class*='MuiAppBar']",
+  "tabs": {
+    "everyone": "[data-test='nav-public-tab']",
+    "friends": "[data-test='nav-contacts-tab']",
+    "mine": "[data-test='nav-personal-tab']"
+  },
+  "buttons": {
+    "sidenavToggle": "button[data-test='sidenav-toggle']",
+    "newTransaction": "[data-test='nav-top-new-transaction']",
+    "notifications": "[data-test='nav-top-notifications-link']"
+  }
+}

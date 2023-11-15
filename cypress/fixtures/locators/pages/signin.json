@@ -1,0 +1,15 @@
+{
+  "inputs": {
+    "userName": "#username",
+    "password": "#password"
+  },
+  "buttons": {
+    "signIn": "[data-test='signin-submit']"
+  },
+  "checks": {
+    "rememberMe": "[name='remember']"
+  },
+  "links": {
+    "signUp": "a[href='/signup']"
+  }
+}
