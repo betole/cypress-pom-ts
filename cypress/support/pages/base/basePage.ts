@@ -1,9 +1,9 @@
 export default abstract class BasePage {
+  protected url: string;
+
   constructor(url: string) {
     this.url = url;
   }
-
-  protected url: string;
 
   public open(): this {
     cy.visit(this.url);
