@@ -1,0 +1,16 @@
+{
+  "container": "[data-test='sidenav']",
+  "labels": {
+    "fullName": "[data-test='sidenav-user-full-name']",
+    "userName": "[data-test='sidenav-username']",
+    "avatar": "[class*='MuiAvatar-circular']",
+    "balance": "[data-test='sidenav-user-balance']"
+  },
+  "buttons": {
+    "home": "[data-test='sidenav-home']",
+    "myAccount": "[data-test='sidenav-user-settings']",
+    "bankAccounts": "data-test='sidenav-bankaccounts']",
+    "notifications": "[data-test='sidenav-notifications']",
+    "logout": "[data-test='sidenav-signout']"
+  }
+}

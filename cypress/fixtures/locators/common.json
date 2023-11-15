@@ -1,5 +1,6 @@
 {
   "properties": {
-    "aria-invalid": "[aria-invalid='true']"
+    "aria-invalid": "[aria-invalid='true']",
+    "role-dialog": "[role='dialog']"
   }
 }

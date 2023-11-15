@@ -1,0 +1,13 @@
+{
+  "container": "[data-test='user-onboarding-dialog']",
+  "buttons": {
+    "next": "button[data-test='user-onboarding-next']",
+    "save": "button[data-test='bankaccount-submit']",
+    "logout": "button[data-test='user-onboarding-logout']",
+    "done": "button[data-test='user-onboarding-next']"
+  },
+  "labels": {
+    "title": "[data-test='user-onboarding-dialog-title']",
+    "content": "[data-test='user-onboarding-dialog-content']"
+  }
+}
